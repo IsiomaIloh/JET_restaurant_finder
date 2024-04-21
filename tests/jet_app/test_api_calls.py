@@ -1,5 +1,5 @@
 import requests_mock
-from jetApp import api_calls
+from jet_app import api_calls
 
 
 def test_get_restaurants():

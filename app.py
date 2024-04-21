@@ -2,9 +2,9 @@ import os
 
 from flask import Flask, request, render_template
 
-from jetApp.api_calls import get_restaurants_from_jet
+from jet_app.api_calls import get_restaurants_from_jet
 
-app = Flask(__name__, template_folder='jetApp/templates')
+app = Flask(__name__, template_folder='jet_app/templates')
 
 
 @app.route('/', methods=['GET', 'POST'])

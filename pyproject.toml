@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "jetApp"
+name = "jet_app"
 version = "0.1.0"
 description = "Develop a system using a provided API to retrieve and filter data based on a given postcode, focusing specifically on restaurant information. The interface you create should display the following details from the 'restaurant object': Name, Cuisines, Numeric Rating, and Address."
 authors = ["Isioma Iloh <ilohkingsleyisioma@gmail.com>"]
 readme = "README.md"
 repository = "https://github.com/IsiomaIloh/JET_restaurant_finder.git"
 packages = [
-    { include = "jetApp", from = "." }
+    { include = "jet_app", from = "." }
 ]
 
 [tool.poetry.dependencies]
