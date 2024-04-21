@@ -6,6 +6,10 @@ This project is a simple Flask application that uses the Just Eat API to retriev
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
+## JET Restaurant Finder App Diagram
+![JET Restaurant Finder App Diagram](static/assets/app-diagram.png)
+
+
 ### Prerequisites
 
 - Python 3.12 or higher
@@ -203,12 +207,11 @@ By choosing Poetry, I aimed to leverage its robust feature set to enhance projec
 The automatic handling of virtual environments and dependencies in a unified manner reduces setup time and potential errors significantly, 
 making it an excellent choice for modern Python projects seeking streamlined operations and developer-friendly workflows.
 
-## Improvements:
-1. Filter feature to filter top 10 restaurants by customer ratings and if more than 10 have the same rating, filter by number of votes.
-2. Filter feature to filter restaurants by cuisine types. 
-3. Search feature to search for a specific restaurant by name or cuisine type. 
-4. Pagination to display more than 10 restaurants. 
-5. Add more restaurant information, such as delivery fees, delivery time, and opening hours.
+## Unclear assumptions:
+The cuisines lists contains some values that would not be, traditionally, classified as cuisines or types of food. 
+Such as, `Collect stamps`, `Deals`, `Low Delivery Fee`, `Freebies`. Should these be filtered out or displayed as is? 
+Could they be later added as a filter option?
+
 
 ## Challenges:
 1. Knowledge gap in using HTML and CSS to style the application. However, this was overcome with the aid of Google and ChatGPT.
@@ -220,3 +223,12 @@ I was able to overcome this by searching on Stack overflow to find out how other
 Stack overflow post used [here](https://stackoverflow.com/questions/57006104/how-to-test-flask-view-context-and-templates-using-pytest)
 4. My experience with Dockerfile and Docker compose was quite limited, but I managed to overcome this by reading the Docker documentation and GitHub thread on how to run poetry inside a Docker container.
 GitHub thread used [here](https://github.com/orgs/python-poetry/discussions/1879).
+
+## Further improvements:
+1. Filter feature to filter top 10 restaurants by customer ratings and if more than 10 have the same rating, filter by number of votes.
+2. Filter feature to filter restaurants by cuisine types. 
+3. Search feature to search for a specific restaurant by name or cuisine type. 
+4. Pagination to display more than 10 restaurants. 
+5. Add more restaurant information, such as delivery fees, delivery time, and opening hours.
+6. Add more tests to cover error handling and edge cases.
+7. Add a feature to display the restaurant's address using a map.

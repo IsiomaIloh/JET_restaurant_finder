@@ -6,33 +6,44 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/results_style.css') }}">
 </head>
 <body>
-        <h1>Restaurants in {{ postcode }}</h1>
-        <div class="container">
+    <header>
+        <div class="header-content">
+            <h1>Restaurants in {{ postcode }}</h1>
+            <a href="/" class="home-button">Home</a>
+        </div>
+    </header>
+    <div class="container">
         <div class="card-container">
-            {% for restaurant in restaurants %}
-            <div class="card">
-                <div class="image-container">
-                    <img src="{{ restaurant['image'] }}" alt="{{ restaurant['name'] }}" class="restaurant-image">
-                </div>
-                <div class="info-container">
-                    <h2 class="restaurant-name">{{ restaurant['name'] }}</h2>
-                    <div class="resturant-address">
-                            Address: {{ restaurant['address'] }}
-                    </div>
-                    <div class="tags">
-                        {% for cuisine in restaurant['cuisines'].split(', ') %}
-                        <span class="tag">{{ cuisine }}</span>
-                        {% endfor %}
-                    </div>
-                    <div class="details">
-                        <div class="rating">
-                            <span class="star">★</span>
-                            {{ restaurant['rating'] }}/5
+            {% if restaurants %}
+                {% for restaurant in restaurants %}
+                    <div class="card">
+                        <div class="image-container">
+                            <img src="{{ restaurant['image'] }}" alt="{{ restaurant['name'] }}" class="restaurant-image">
+                        </div>
+                        <div class="info-container">
+                            <h2 class="restaurant-name">{{ restaurant['name'] }}</h2>
+                            <div class="resturant-address">
+                                Address: {{ restaurant['address'] }}
+                        </div>
+                            <div class="tags">
+                                {% for cuisine in restaurant['cuisines'].split(', ') %}
+                                <span class="tag">{{ cuisine }}</span>
+                                {% endfor %}
+                            </div>
+                            <div class="details">
+                                <div class="rating">
+                                    <span class="star">★</span>
+                                    {{ restaurant['rating'] }}/5
+                                </div>
+                            </div>
                         </div>
                     </div>
+                {% endfor %}
+            {% else %}
+                <div class="no-results">
+                    <h2>No restaurants found for this postcode. Please try a different postcode.</h2>
                 </div>
-            </div>
-            {% endfor %}
+            {% endif %}
         </div>
     </div>
 </body>

@@ -22,11 +22,10 @@ def home():
 @app.route('/restaurants/<postcode>', methods=['GET'])
 def get_restaurants(postcode):
     response = get_restaurants_from_jet(postcode)
-    return render_template(
-        'results.html',
-        restaurants=response,
-        postcode=postcode
-    )
+    if "status" in response:
+        # If there's an error or no data, it returns an error template or JSON response
+        return render_template('error.html', error=response, postcode=postcode)
+    return render_template('results.html', restaurants=response, postcode=postcode)
 
 
 if __name__ == '__main__':

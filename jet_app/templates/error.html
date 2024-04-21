@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error - Restaurant Results</title>
+</head>
+<body>
+    <h1>Error: {{ error.status }}</h1>
+    <h2>Code: {{ error.code }}</h2>
+    <p>No restaurants found for postcode {{ postcode }} or there was an error processing your request.</p>
+    <a href="/">Try another postcode</a>
+</body>
+</html>

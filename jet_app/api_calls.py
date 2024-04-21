@@ -16,7 +16,7 @@ def get_restaurants_from_jet(postcode):
 
         # Checks if no restaurants found
         if not restaurants:
-            return {"status": "No restaurants found"}
+            return {"status": "No restaurants found", "code": 404}
 
         return process_restaurants(restaurants)
 

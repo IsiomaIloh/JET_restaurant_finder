@@ -10,11 +10,11 @@ ENV PYTHONDONTWRITEBYTECODE = 1
 # the application crashes without emitting any logs due to the buffering.
 ENV PYTHONUNBUFFERED = 1
 
-# Set the working directory in the container to /app
+# Set the working directory in the container to /usr/app
 WORKDIR usr/app
 
-# Add the current directory contents into the container at /app
-ADD . /app
+# Add the current directory contents into the container at /usr/app
+ADD . /usr/app
 
 # Install Poetry
 RUN pip install poetry==$POETRY_VERSION
