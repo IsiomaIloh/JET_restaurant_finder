@@ -14,7 +14,8 @@ def test_get_restaurants():
                         "firstLine": "123 Test St",
                         "postalCode": "TE1 1ST",
                         "city": "Test City"
-                    }
+                    },
+                    "logoUrl": "https://www.example.com/logo.jpg"
                 }
             ]
         })
@@ -33,7 +34,8 @@ def test_process_restaurants():
                 "firstLine": "123 Test St",
                 "postalCode": "TE1 1ST",
                 "city": "Test City"
-            }
+            },
+            "logoUrl": "https://www.example.com/logo.jpg"
         }
     ]
 
@@ -57,7 +59,8 @@ def test_process_restaurants_multiple_restaurants():
                 "firstLine": "123 Test St",
                 "postalCode": "TE1 1ST",
                 "city": "Test City"
-            }
+            },
+            "logoUrl": "https://www.example.com/logo.jpg"
         },
         {
             "name": "Test Restaurant 2",
@@ -67,7 +70,8 @@ def test_process_restaurants_multiple_restaurants():
                 "firstLine": "456 Test Ave",
                 "postalCode": "TE1 2ND",
                 "city": "Test City"
-            }
+            },
+            "logoUrl": "https://www.example.com/logo.jpg"
         }
     ]
 
@@ -87,7 +91,8 @@ def test_process_restaurants_no_cuisines():
                 "firstLine": "123 Test St",
                 "postalCode": "TE1 1ST",
                 "city": "Test City"
-            }
+            },
+            "logoUrl": "https://www.example.com/logo.jpg"
         }
     ]
 
@@ -105,7 +110,8 @@ def test_process_restaurants_multiple_cuisines():
                 "firstLine": "123 Test St",
                 "postalCode": "TE1 1ST",
                 "city": "Test City"
-            }
+            },
+            "logoUrl": "https://www.example.com/logo.jpg"
         }
     ]
 

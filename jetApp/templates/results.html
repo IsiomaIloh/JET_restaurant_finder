@@ -1,21 +1,39 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-df = pd.read_csv('/Users/isiomailoh/Desktop/datasets/shopping_trends_project/dataset/shopping_trends_dataset.csv')
-#print(df.isnull().sum())
-
-colors = ["#89CFF0", "#FF69B4", "#FFD700", "#7B68EE", "#FF4500",
-          "#9370DB", "#32CD32", "#8A2BE2", "#FF6347", "#20B2AA",
-          "#FF69B4", "#00CED1", "#FF7F50", "#7FFF00", "#DA70D6"]
-plt.figure(figsize = (20, 6))
-
-counts = df["Gender"].value_counts()
-explode = (0, 0.1)
-
-counts.plot(kind = 'pie', fontsize = 12, colors = colors, explode = explode, autopct = '%1.1f%%')
-plt.xlabel('Gender', weight = "bold", color = "#2F0F5D", fontsize = 14, labelpad = 20)
-plt.axis('equal')
-plt.legend(labels = counts.index, loc = "best")
-plt.show()
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results_style.css') }}">
+</head>
+<body>
+        <h1>Restaurants in {{ postcode }}</h1>
+        <div class="container">
+        <div class="card-container">
+            {% for restaurant in restaurants %}
+            <div class="card">
+                <div class="image-container">
+                    <img src="{{ restaurant['image'] }}" alt="{{ restaurant['name'] }}" class="restaurant-image">
+                </div>
+                <div class="info-container">
+                    <h2 class="restaurant-name">{{ restaurant['name'] }}</h2>
+                    <div class="resturant-address">
+                            Address: {{ restaurant['address'] }}
+                    </div>
+                    <div class="tags">
+                        {% for cuisine in restaurant['cuisines'].split(', ') %}
+                        <span class="tag">{{ cuisine }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="details">
+                        <div class="rating">
+                            <span class="star">★</span>
+                            {{ restaurant['rating'] }}/5
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

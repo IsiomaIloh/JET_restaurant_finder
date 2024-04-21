@@ -39,5 +39,6 @@ def process_restaurants(restaurants):
                 restaurant["address"]["postalCode"],
                 restaurant["address"]["city"]
             ]),
+            "image": restaurant["logoUrl"] if restaurant["logoUrl"] else ""
         })
     return processed_data
