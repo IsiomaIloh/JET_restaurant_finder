@@ -1,47 +1,35 @@
-Poetry code to install poetry.lock and pyproject.toml files
-$ poetry new poetry-tutorial-project
-Then clean out the directory to fit your preferred format. Example below
+# JET Restaurant Finder
 
-Below is an example of a structured Python project directory for a data analysis project:
+This project is a simple Flask application that uses the Just Eat API to retrieve and filter restaurant data based on a given postcode. The application focuses specifically on restaurant information and displays the following details from the 'restaurant object': Name, Cuisines, Numeric Rating, and Address.
 
-```
-data-analysis-project/
-│
-├── data/                # Folder to store datasets
-│   ├── customer_data.csv      # Sample dataset containing customer information
-│   └── sales_data.csv         # Sample dataset containing sales information
-│
-├── notebooks/           # Folder to store Jupyter notebooks
-│   ├── exploratory_analysis.ipynb    # Notebook for exploratory data analysis
-│   └── data_preprocessing.ipynb       # Notebook for data preprocessing
-│
-├── scripts/             # Folder to store Python scripts
-│   ├── data_loader.py          # Script to load datasets
-│   ├── data_preprocessing.py   # Script for data preprocessing
-│   └── analysis_utils.py       # Script containing utility functions for analysis
-│
-├── visualizations/      # Folder to store visualizations
-│   ├── customer_segmentation.png    # Visualization of customer segmentation
-│   └── sales_trend.png              # Visualization of sales trend over time
-│
-├── reports/             # Folder to store project reports
-│   ├── project_summary.pdf          # Summary report of the project
-│   └── analysis_findings.docx       # Detailed findings and analysis report
-│
-├── requirements.txt     # File listing all the Python dependencies for the project
-├── README.md            # Markdown file explaining the project overview, setup, and usage
-└── .gitignore           # File to specify which files and directories to ignore in version control
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+- Python 3.12 or higher
+- Flask 3.0.3 or higher
+- Requests 2.31.0 or higher
+
+You can install the dependencies with the following command:
+
+```bash
+poetry install
 ```
 
-Explanation of each folder and file:
+### Running the Application
 
-- **data/**: This folder contains datasets used for analysis.
-- **notebooks/**: Contains Jupyter notebooks used for exploratory data analysis, data preprocessing, and any other analysis tasks.
-- **scripts/**: Contains Python scripts for various tasks such as loading data, preprocessing, and utility functions.
-- **visualizations/**: Stores visualizations generated during the analysis process.
-- **reports/**: Contains project reports summarizing findings, insights, and analysis.
-- **requirements.txt**: File listing all the Python dependencies required to run the project.
-- **README.md**: Markdown file providing an overview of the project, setup instructions, and usage guidelines.
-- **.gitignore**: Specifies which files and directories should be ignored in version control (e.g., temporary files, data files).
+To run the application, navigate to the project directory and run the following command:
 
-This directory structure helps organize different aspects of the project, making it easy to navigate, collaborate, and maintain.
+```bash
+flask run
+```
+
+The application will start running at `http://0.0.0.0:8080`.
+
+## Usage
+
+To get restaurant data for a specific postcode, make a GET request to the `/restaurants/<postcode>` endpoint. Replace `<postcode>` with the actual postcode you want to search for.
+
+The response will be a JSON object containing the restaurant data.
