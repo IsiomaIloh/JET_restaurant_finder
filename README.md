@@ -189,6 +189,7 @@ To get restaurant data for a specific postcode, you need to:
     - B26 3QJ
     - DH4 5QZ
     - BT7 1NN
+    - CV1 2TU
 3. The application will then display a list of restaurants in the form of cards, each containing information about a restaurant in the specified postcode area.
    The application returns the first 10 restaurants returned by the API call to the Just Eat API.
 
@@ -225,10 +226,11 @@ Stack overflow post used [here](https://stackoverflow.com/questions/57006104/how
 GitHub thread used [here](https://github.com/orgs/python-poetry/discussions/1879).
 
 ## Further improvements:
-1. Filter feature to filter top 10 restaurants by customer ratings and if more than 10 have the same rating, filter by number of votes.
-2. Filter feature to filter restaurants by cuisine types. 
-3. Search feature to search for a specific restaurant by name or cuisine type. 
-4. Pagination to display more than 10 restaurants. 
-5. Add more restaurant information, such as delivery fees, delivery time, and opening hours.
-6. Add more tests to cover error handling and edge cases.
-7. Add a feature to display the restaurant's address using a map.
+1. Implementing a filter feature to filter top 10 restaurants by customer ratings and if more than 10 have the same rating, filter by number of votes.
+2. Introducing a multifaceted filter feature to filter restaurants by name, cuisine types (e.g. Italian, Mexican, Chinese, Nigerian, etc.), 
+dietary preference (Vegetarian, Vegan, Halal etc.), user ratings, delivery time etc.
+3. Incorporate pagination to display more than 10 restaurant listings.
+4. Expanding restaurant profiles to include additional details such as delivery fees, delivery time, and restaurant opening hours.
+5. Enhancing testing protocols to comprehensively cover error handling and edge case scenarios. 
+6. Integrating a Google mapping feature to visually display the restaurant's location on the app based on their address.
+7. Enhancing data security measure by storing the API key in an environmental variable to mitigate potential security risks.
